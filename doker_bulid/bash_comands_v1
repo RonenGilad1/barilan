@@ -1,0 +1,11 @@
+
+
+
+docker build -t alpine-python-selenium -f Dockerfile.alpine
+docker run --rm --name alp_py_packs alpine-python-selenium
+
+docker pull nginx
+
+docker run --name my-nginx -p 80:80 -d nginx
+
+docker ps
