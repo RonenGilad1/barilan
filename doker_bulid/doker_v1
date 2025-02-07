@@ -1,0 +1,17 @@
+# Use Alpine as the base image
+FROM alpine:latest
+
+# Install required dependencies
+RUN apk add --no-cache python3 py3-pip git chromium chromium-chromedriver
+
+# Set working directory
+WORKDIR /app
+
+# Install Python packages
+RUN pip install --no-cache-dir selenium pandas requests webdriver-manager
+
+# Clone the GitHub repository (Replace with your actual repo URL)
+RUN git clone https://github.com/yourusername/yourrepo.git /app
+
+# Set the script to be executed (Replace script.py with your actual script)
+CMD ["python3", "/app/script.py"]
